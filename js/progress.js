@@ -1,4 +1,5 @@
 let t = 0
+let bar
 bar.style.width = 0
 const barAnimation = setInterval(() => {
   bar.style.width =  t + '%'
