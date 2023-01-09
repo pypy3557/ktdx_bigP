@@ -1,0 +1,48 @@
+<html> 
+    <head> 
+        <title>부산지방경찰청 스마트교통관제시스템</title> 
+        <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script> 
+        <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script> 
+        <script type="text/javascript"> 
+            FusionCharts.ready(function(){ var fusioncharts = new FusionCharts({ type: 'gantt', renderAt: 'chart-container', width: '1250', height: '500', dataFormat: 'json', 
+            dataSource: { "chart": { "dateformat": "%mn:%ss", "caption": "부산광역시 교차로 관제", "slackFillColor": "#0054FF", "theme": "fint", "canvasBorderAlpha": "40" }, 
+            "datatable": { "headervalign": "bottom", "datacolumn": [{ "headertext": "차로명", "headerfontsize": "18", "headervalign": "bottom", "headeralign": "left", "align": "left", "fontsize": "12", 
+                                                    "text": [{ "label": "진구청 -> 전포 방면" }, 
+                                                             { "label": "진구청 -> 연산 방면"}, 
+                                                             { "label": "진구청 -> 범내골 방면"}, 
+                                                             { "label": "전포 -> 범내골 방면"}, 
+                                                             { "label": "전포 -> 롯데백화점 방면" }, 
+                                                             { "label": "전포 -> 진구청 방면" }, 
+                                                             { "label": "범내골 -> 롯데백화점 방면" }, 
+                                                             { "label": "범내골 -> 진구청 방면" }, 
+                                                             { "label": "범내골 -> 연산 방면" }, 
+                                                             { "label": "연산 -> 범내골 방면" }, 
+                                                             { "label": "연산 -> 롯데백화점 방면" }, 
+                                                             { "label": "롯데백화점 -> 연산 방면" }, 
+                                                             { "label": "롯데백화점 -> 전포 방면" }] }] },
+                                                    "categories": [{ "category": [{ "start": "00:00:00", "end": "00:05:00", "label": "서면교차로_CYCLE" }] }, 
+                                                        { "category": [{ "start": "00:00:00", "end": "00:01:00", "label": "T1" }, { "start": "00:01:00", "end": "00:02:00", "label": "T2" }, { "start": "00:02:00", "end": "00:03:00", "label": "T3" }, { "start": "00:03:00", "end": "00:04:00", "label": "T4" }, { "start": "00:04:00", "end": "00:05:00", "label": "T5" }] }], 
+                                                    "processes": { "fontsize": "12", "isbold": "1", "align": "left", "headerText": "기점명", "headerFontSize": "20", "headerVAlign": "bottom", "headerAlign": "left", 
+                                                    "process": [{ "label": "진구청", "id": "1"}, { "label": "진구청", "id": "2"}, { "label": "진구청", "id": "3"}, { "label": "전포", "id": "4" }, { "label": "전포", "id": "5" }, { "label": "전포", "id": "6" }, { "label": "범내골", "id": "7" }, { "label": "범내골", "id": "8" }, { "label": "범내골", "id": "9" }, { "label": "연산", "id": "10" }, { "label": "연산", "id": "11" }, { "label": "롯데백화점", "id": "12" }, { "label": "롯데백화점", "id": "13" }] }, 
+                                                    
+                                                    "tasks": { "showlabels": "1", color: "#1DDB16", 
+                                                                                 "task": [{ "start": "00:00:00", "end": "00:01:10", "label": "진구청 -> 전포 방면", "processid": "1", "id" : "1-1"},
+                                                                                          { "start": "00:00:00", "end": "00:01:10", "label": "진구청 -> 연산 방면", "processid": "2", "id" : "2-1"},
+                                                                                          { "start": "00:00:00", "end": "00:01:10", "label": "진구청 -> 범내골 방면", "processid": "3", "id" : "3-1"},
+                                                                                          { "start": "00:01:10", "end": "00:02:00", "label": "전포 -> 범내골 방면", "processid": "4", "id" : "4-1"},
+                                                                                          { "start": "00:01:10", "end": "00:02:00", "label": "전포 -> 롯데백화점 방면", "processid": "5", "id" : "5-1"},
+                                                                                          { "start": "00:01:10", "end": "00:02:00", "label": "전포 -> 진구청 방면", "processid": "6", "id" : "6-1"}, 
+                                                                                          { "start": "00:02:00", "end": "00:03:00", "label": "범내골 -> 롯데백화점 방면", "processid": "7", "id" : "7-1"},
+                                                                                          { "start": "00:02:00", "end": "00:03:00", "label": "범내골 -> 진구청 방면", "processid": "8", "id" : "8-1"},
+                                                                                          { "start": "00:02:00", "end": "00:03:00", "label": "범내골 -> 연산 방면", "processid": "9", "id" : "9-1"}, { "start": "00:03:00", "end": "00:04:00", "label": "범내골 -> 연산 방면 - 1", "processid": "9", "color": "#0054FF", "id" : "9-2"}, 
+                                                                                          { "start": "00:03:00", "end": "00:04:00", "label": "연산 -> 범내골 방면", "processid": "10", "id" : "10-1"},
+                                                                                          { "start": "00:03:00", "end": "00:04:00", "label": "연산 -> 롯데백화점 방면", "processid": "11", "id" : "11-1"}, { "start": "00:04:00", "end": "00:05:00", "label": "연산 -> 롯데백화점 방면 - 1", "processid": "11", "color": "#0054FF", "id" : "11-2"}, 
+                                                                                          { "start": "00:04:00", "end": "00:05:00", "label": "롯데백화점 -> 연산 방면", "processid": "12", "id" : "12-1"},
+                                                                                          { "start": "00:04:00", "end": "00:05:00", "label": "롯데백화점 -> 전포 방면", "processid": "13", "id" : "13-1"}
+                                                    ] } } } ); fusioncharts.render(); }); 
+            </script> 
+    </head> 
+        <body> 
+            <div id="chart-container"></div> 
+        </body> 
+</html>

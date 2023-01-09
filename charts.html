@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>부산지방경찰청 스마트교통관제시스템</title>
+        <link rel="stylesheet" href="./css/style-a.css">
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet">
+        <link href = './css/modal.css', rel = 'stylesheet'>
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <style type="text/css">
+            #wrap {
+                width:100%;
+                height:5px;
+                background:white;
+            }
+            #sidebar {
+                background: #333;
+                width: 300px;
+                height: 100%;
+                top: 0;
+                left: 1519px;
+                position: fixed;
+                z-index: 3;
+            }
+            #sidebar > ul {
+                font-size: 12px;
+                color: white;
+                margin:0;
+                padding-top: 300px;
+                padding-inline-start:5px;
+                top:500px;
+                left:1250px;
+            }
+            #sidebar > ul > a {
+                color: white;
+                margin:0;
+                padding: 0;
+                top:500px;
+                left:1250px;
+                z-index: 5;
+                display: flex;
+            }
+            /*#sidebar > ul > b {
+                color: white;
+                margin:0;
+                padding: 0;
+                top:300px;
+                left:1250px;
+                position: fixed;
+            }*/
+            #sidebar li {
+                margin: 0 0 20px;
+                list-style: none;
+            }
+            #sidebar > button {
+                background:#333;
+                position: absolute;
+                top: 150px;
+                left: -50px;
+                width: 52px;
+                height: 52px;
+                border: none;
+                color: white;
+            }
+        </style>        
+    </head>
+    <body class="sb-nav-fixed">
+        <div id="wrap">
+            <aside id="sidebar">
+                <ul>
+                    [2022-12-28 08:22:31]<br>연산교차로 거제 -> 물만골 방면 35s -> 55s<br><br>
+                    [2022-12-28 08:22:54]<br>연산교차로 거제 -> 시청 방면 55s -> 65s<br><br>
+                    [2022-12-28 08:26:31] <b style="color:red">[긴급차량 우선신호제어]</b><br>대연교차로 못골 -> 수영 방면(환자이송)<br><br>
+                    [2022-12-28 08:31:39]<br>진양교차로 당감 -> 연지 방면 55s -> 65s<br><br>
+                    [2022-12-28 08:48:02]<br>수영교차로 망미 -> 민락동 방면 45s -> 55s<br><br>
+                    [2022-12-28 08:58:52]<br>서면교차로 전포 ->  진구청방면 50s -> 60s<br><br>
+                    [2022-12-28 12:48:24]<br>서면교차로 범내골 -> 롯데백화점 방면 60s -> 45s<br><br>
+                </ul>
+                <button><span class="btn_t">로그확인</span></button>
+            </aside>
+        </div>
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">
+                <img src="./img/pol2.png" style="border-radius: 5px" width="150" height="50">
+                스마트교통관제시스템
+            </a>
+            <!-- Sidebar Toggle-->
+            <!-- <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button> -->
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group" style = 'color:aliceblue'>
+                    <!-- <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button> -->
+                    포돌이님, 오늘도 화이팅하세요!
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./img/podol.png" style="height: 30px; width: 30px; border-radius:20px;"></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">목록</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                교통정보
+                            </a>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                실시간 교통상황
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                원격신호제어
+                            </a>
+                            <!-- <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                </nav>
+                            </div> -->
+                            <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a> -->
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="iframe_wea"><iframe width="100%" height="245" src="https://forecast.io/embed/#lat=35.108&lon=129.04&name=부산&color=#E1E1E1&font=arial&units=si" frameborder="0"></iframe></div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <!-- <div class="chat_wrap" style="float: right; top:170px; left: 1000px; position: absolute; border:5px solid darkgray; border-radius:3px;" >
+                         <div class="header">
+                            자동 신호변경 안내
+                        </div>
+                        <div class="chat">
+                            <ul>
+                                <div>[2022-12-28 12:48:24]서면교차로 범내골 -> 롯데백화점 방면 60s -> 45s</div>
+                            </ul>
+                        </div>
+                    </div> -->
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">실시간 교통상황</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active", id="current_date">
+                                <script>
+                                    document.getElementById("current_date").innerHTML = Date();
+                                    </script>
+                            </li>
+                        </ol>
+                        <div class="left">
+                            <div class="header upcoming">현재 교통상황</div>
+                            <video class="vedio" id = "video_obj" width="750" height="450" autoplay="autoplay" muted = 'muted'>
+                                <source src="./video/yolo_test_2_trim.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="right">
+                            <p>교차로명</p>
+                            <select name="교차로명">
+                                <option value="">교차로명</option>
+                                <option vlaue="서면교차로" selected="selected">서면교차로</option>
+                                <option vlaue="연산교차로">연산교차로</option>
+                                <option vlaue="양정교차로">양정교차로</option>
+                                <option vlaue="동래교차로">동래교차로</option>
+                                <option vlaue="미남교차로">미남교차로</option>
+                                <option vlaue="주례교차로">주례교차로</option>
+                                <option vlaue="민락교차로">민락교차로</option>
+                                <option vlaue="수영교차로">수영교차로</option>
+                            </select>
+                            <p>교차로 ID</p>
+                            <select name="교차로 ID">
+                                <option value="">교차로 ID</option>
+                                <option vlaue="CCTV001">CCTV001</option>
+                                <option vlaue="CCTV002" selected="selected">CCTV002</option>
+                                <option vlaue="CCTV003">CCTV003</option>
+                                <option vlaue="CCTV004">CCTV004</option>
+                                <option vlaue="CCTV005">CCTV005</option>
+                            </select>
+                                <p> Yolo Analyze </p>
+                                <div class="right-content">
+                                    <div id="app2">
+                                        <table>
+                                            <tr><th>Type</th><th>Bus</th><th>Car</th><th>Motorbike</th><th>Person</th></tr>
+                                            <tr><td>Num</td><td>4</td><td>17</td><td>5</td><td>1</td></tr>
+                                        </table>
+                                    </div>
+                                    <button class="button7">reset</button>
+                                </div>
+                                <p>카메라 모델 : HD-1-2.0</p>
+                                <p>카메라 설치 위치 : 129.1212.15</p>
+                                <p>카메라 통신 상태 : 정상</p>
+                            </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; KT_AIVLE DX컨설턴트 24조</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <div id="alert" class="alert-overlay2" name="alert">
+            <div class="alert-window2" style="border-radius: 5px;">
+                <div class="title2" style="font-weight: bold;">
+                    자동 신호변경 안내
+                </div>
+                <!-- <div class="close-area2">X</div> -->
+                <div class="content2" style="text-align: center;">
+                    <p style="font-size: 14px;">[2022-12-28 12:48:24]서면교차로 범내골 -> 롯데백화점 방면 60s -> 45s</p>
+                </div>
+            </div>
+        </div>
+        <div id="modal" class="modal-overlay">
+            <div class="modal-window" style="border-radius: 5px;">
+                <div class="title">
+                    <h2>신호 자동제어 알림</h2>
+                </div>
+                <div class="close-area" onclick="modalOff()">X</div>
+                <div class="content" style="text-align: center;">
+                    <p>부산진구 서면교차로 진구청->범내골 방면</p>
+                    <p>정체 -> 서행 변경</p>
+                    <p>기존 65초 -> 40초 변경</p>
+                    <button href="tables_badtra.html" onclick="func1()" style="text-decoration: none; color:white;" ><a style="padding:3px; border-radius:5px; border: 3px solid white;">변경</a></button>
+                    <button id="popup-yes" onclick="modalOff()" style="color:white;"><a style="padding:3px; border-radius:5px; border: 3px solid white;">취소</a></button>
+                    <div id="progressbar1"><span class="caption"></span></div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script> -->
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="assets/demo/chart-pie-demo.js"></script>
+        <script src="js/modal.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript">$(function(){
+            var duration = 300;
+    
+            var $side = $('#sidebar');
+            var $sidebt = $side.find('button').on('click', function(){
+                $side.toggleClass('open');
+    
+                if($side.hasClass('open')) {
+                    $side.stop(true).animate({left:'1250px'}, duration);
+                    $sidebt.find('span').text('닫기');
+                }else{
+                    $side.stop(true).animate({left:'1519px'}, duration);
+                    $sidebt.find('span').text('로그보기');
+                };
+            });
+        });
+    </script>
+        <!-- <script>jQuery(document).setTimeout(function() {
+                modalOn2();
+                }, 1000);</script> -->
+        
+        
+    
+</html>
