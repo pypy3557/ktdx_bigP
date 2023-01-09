@@ -1,359 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval' 'unsafe-inline'; object-src 'self'; style-src 'self' 'unsafe-inline'; media-src *">
+<html> 
+    <head> 
         <title>부산지방경찰청 스마트교통관제시스템</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet"/>
-        <link href="css/style.css" rel="stylesheet">
-        <link href="css/progress.css" rel="stylesheet">
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script> 
-        <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script>
+        <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script> 
         <script type="text/javascript"> 
-            FusionCharts.ready(function show_chart() { var fusioncharts = new FusionCharts({ type: 'gantt', renderAt: 'chart-container', width: '1250', height: '500', dataFormat: 'json', 
+            FusionCharts.ready(function(){ var fusioncharts = new FusionCharts({ type: 'gantt', renderAt: 'chart-container', width: '1250', height: '500', dataFormat: 'json', 
             dataSource: { "chart": { "dateformat": "%mn:%ss", "caption": "부산광역시 교차로 관제", "slackFillColor": "#0054FF", "theme": "fint", "canvasBorderAlpha": "40" }, 
             "datatable": { "headervalign": "bottom", "datacolumn": [{ "headertext": "차로명", "headerfontsize": "18", "headervalign": "bottom", "headeralign": "left", "align": "left", "fontsize": "12", 
                                                     "text": [{ "label": "진구청 -> 전포 방면" }, 
-                                                                { "label": "진구청 -> 연산 방면"}, 
-                                                                { "label": "진구청 -> 범내골 방면"}, 
-                                                                { "label": "전포 -> 범내골 방면"}, 
-                                                                { "label": "전포 -> 롯데백화점 방면" }, 
-                                                                { "label": "전포 -> 진구청 방면" }, 
-                                                                { "label": "범내골 -> 롯데백화점 방면" }, 
-                                                                { "label": "범내골 -> 진구청 방면" }, 
-                                                                { "label": "범내골 -> 연산 방면" }, 
-                                                                { "label": "연산 -> 범내골 방면" }, 
-                                                                { "label": "연산 -> 롯데백화점 방면" }, 
-                                                                { "label": "롯데백화점 -> 연산 방면" }, 
-                                                                { "label": "롯데백화점 -> 전포 방면" }] }] },
+                                                             { "label": "진구청 -> 연산 방면"}, 
+                                                             { "label": "진구청 -> 범내골 방면"}, 
+                                                             { "label": "전포 -> 범내골 방면"}, 
+                                                             { "label": "전포 -> 롯데백화점 방면" }, 
+                                                             { "label": "전포 -> 진구청 방면" }, 
+                                                             { "label": "범내골 -> 롯데백화점 방면" }, 
+                                                             { "label": "범내골 -> 진구청 방면" }, 
+                                                             { "label": "범내골 -> 연산 방면" }, 
+                                                             { "label": "연산 -> 범내골 방면" }, 
+                                                             { "label": "연산 -> 롯데백화점 방면" }, 
+                                                             { "label": "롯데백화점 -> 연산 방면" }, 
+                                                             { "label": "롯데백화점 -> 전포 방면" }] }] },
                                                     "categories": [{ "category": [{ "start": "00:00:00", "end": "00:05:00", "label": "서면교차로_CYCLE" }] }, 
                                                         { "category": [{ "start": "00:00:00", "end": "00:01:00", "label": "T1" }, { "start": "00:01:00", "end": "00:02:00", "label": "T2" }, { "start": "00:02:00", "end": "00:03:00", "label": "T3" }, { "start": "00:03:00", "end": "00:04:00", "label": "T4" }, { "start": "00:04:00", "end": "00:05:00", "label": "T5" }] }], 
                                                     "processes": { "fontsize": "12", "isbold": "1", "align": "left", "headerText": "기점명", "headerFontSize": "20", "headerVAlign": "bottom", "headerAlign": "left", 
                                                     "process": [{ "label": "진구청", "id": "1"}, { "label": "진구청", "id": "2"}, { "label": "진구청", "id": "3"}, { "label": "전포", "id": "4" }, { "label": "전포", "id": "5" }, { "label": "전포", "id": "6" }, { "label": "범내골", "id": "7" }, { "label": "범내골", "id": "8" }, { "label": "범내골", "id": "9" }, { "label": "연산", "id": "10" }, { "label": "연산", "id": "11" }, { "label": "롯데백화점", "id": "12" }, { "label": "롯데백화점", "id": "13" }] }, 
                                                     
                                                     "tasks": { "showlabels": "1", color: "#1DDB16", 
-                                                                                    "task": [{ "start": "00:00:00", "end": "00:01:10", "label": "진구청 -> 전포 방면", "processid": "1", "id" : "1-1", "color" : "#FF0000"}, { "start": "00:01:10", "end": "00:01:30", "label": "진구청 -> 전포 방면", "processid": "1", "id" : "1-2", "color" : "#FF9436"},
-                                                                                            { "start": "00:00:00", "end": "00:01:10", "label": "진구청 -> 연산 방면", "processid": "2", "id" : "2-1", "color" : "#FF0000"}, { "start": "00:01:10", "end": "00:01:30", "label": "진구청 -> 연산 방면", "processid": "2", "id" : "2-2", "color" : "#FF9436"},
-                                                                                            { "start": "00:00:00", "end": "00:01:10", "label": "진구청 -> 범내골 방면", "processid": "3", "id" : "3-1", "color" : "#FF0000"}, { "start": "00:01:10", "end": "00:01:30", "label": "진구청 -> 범내골 방면", "processid": "3", "id" : "3-2", "color" : "#FF9436"},
-                                                                                            { "start": "00:01:30", "end": "00:02:15", "label": "전포 -> 범내골 방면", "processid": "4", "id" : "4-1"}, { "start": "00:01:10", "end": "00:01:30", "label": "", "processid": "4", "id" : "4-2", "color" : "#EAEAEA"},
-                                                                                            { "start": "00:01:30", "end": "00:02:15", "label": "전포 -> 롯데백화점 방면", "processid": "5", "id" : "5-1"}, { "start": "00:01:10", "end": "00:01:30", "label": "", "processid": "5", "id" : "5-2", "color" : "#EAEAEA"},
-                                                                                            { "start": "00:01:30", "end": "00:02:15", "label": "전포 -> 진구청 방면", "processid": "6", "id" : "6-1"},  { "start": "00:01:10", "end": "00:01:30", "label": "", "processid": "6", "id" : "6-2", "color" : "#EAEAEA"},
-                                                                                            { "start": "00:02:15", "end": "00:03:10", "label": "범내골 -> 롯데백화점 방면", "processid": "7", "id" : "7-1"}, { "start": "00:02:00", "end": "00:02:15", "label": "", "processid": "7", "id" : "7-2", "color" : "#EAEAEA"},
-                                                                                            { "start": "00:02:15", "end": "00:03:10", "label": "범내골 -> 진구청 방면", "processid": "8", "id" : "8-1"}, { "start": "00:02:00", "end": "00:02:15", "label": "", "processid": "8", "id" : "8-2", "color" : "#EAEAEA"},
-                                                                                            { "start": "00:02:15", "end": "00:03:10", "label": "범내골 -> 연산 방면", "processid": "9", "id" : "9-1"}, { "start": "00:03:10", "end": "00:04:05", "label": "범내골 -> 연산 방면", "processid": "9", "color": "#0054FF", "id" : "9-2"}, { "start": "00:02:00", "end": "00:02:15", "label": "", "processid": "9", "id" : "9-3", "color" : "#EAEAEA"},
-                                                                                            { "start": "00:03:10", "end": "00:04:05", "label": "연산 -> 범내골 방면", "processid": "10", "id" : "10-1"}, { "start": "00:03:00", "end": "00:03:10", "label": "", "processid": "10", "id" : "10-2",  "color" : "#EAEAEA"},
-                                                                                            { "start": "00:03:10", "end": "00:04:05", "label": "연산 -> 롯데백화점 방면", "processid": "11", "id" : "11-1"}, { "start": "00:04:05", "end": "00:05:00", "label": "연산 -> 롯데백화점 방면 - 1", "processid": "11", "color": "#0054FF", "id" : "11-2"}, { "start": "00:03:00", "end": "00:03:10", "label": "", "processid": "11", "id" : "11-3",  "color" : "#EAEAEA"},
-                                                                                            { "start": "00:04:05", "end": "00:05:00", "label": "롯데백화점 -> 연산 방면", "processid": "12", "id" : "12-1"}, { "start": "00:04:00", "end": "00:04:05", "label": "", "processid": "12", "id" : "12-2", "color" : "#EAEAEA"},
-                                                                                            { "start": "00:04:05", "end": "00:05:00", "label": "롯데백화점 -> 전포 방면", "processid": "13", "id" : "13-1"}, { "start": "00:04:00", "end": "00:04:05", "label": "", "processid": "13", "id" : "13-2", "color" : "#EAEAEA"}
+                                                                                 "task": [{ "start": "00:00:00", "end": "00:01:10", "label": "진구청 -> 전포 방면", "processid": "1", "id" : "1-1"},
+                                                                                          { "start": "00:00:00", "end": "00:01:10", "label": "진구청 -> 연산 방면", "processid": "2", "id" : "2-1"},
+                                                                                          { "start": "00:00:00", "end": "00:01:10", "label": "진구청 -> 범내골 방면", "processid": "3", "id" : "3-1"},
+                                                                                          { "start": "00:01:10", "end": "00:02:00", "label": "전포 -> 범내골 방면", "processid": "4", "id" : "4-1"},
+                                                                                          { "start": "00:01:10", "end": "00:02:00", "label": "전포 -> 롯데백화점 방면", "processid": "5", "id" : "5-1"},
+                                                                                          { "start": "00:01:10", "end": "00:02:00", "label": "전포 -> 진구청 방면", "processid": "6", "id" : "6-1"}, 
+                                                                                          { "start": "00:02:00", "end": "00:03:00", "label": "범내골 -> 롯데백화점 방면", "processid": "7", "id" : "7-1"},
+                                                                                          { "start": "00:02:00", "end": "00:03:00", "label": "범내골 -> 진구청 방면", "processid": "8", "id" : "8-1"},
+                                                                                          { "start": "00:02:00", "end": "00:03:00", "label": "범내골 -> 연산 방면", "processid": "9", "id" : "9-1"}, { "start": "00:03:00", "end": "00:04:00", "label": "범내골 -> 연산 방면 - 1", "processid": "9", "color": "#0054FF", "id" : "9-2"}, 
+                                                                                          { "start": "00:03:00", "end": "00:04:00", "label": "연산 -> 범내골 방면", "processid": "10", "id" : "10-1"},
+                                                                                          { "start": "00:03:00", "end": "00:04:00", "label": "연산 -> 롯데백화점 방면", "processid": "11", "id" : "11-1"}, { "start": "00:04:00", "end": "00:05:00", "label": "연산 -> 롯데백화점 방면 - 1", "processid": "11", "color": "#0054FF", "id" : "11-2"}, 
+                                                                                          { "start": "00:04:00", "end": "00:05:00", "label": "롯데백화점 -> 연산 방면", "processid": "12", "id" : "12-1"},
+                                                                                          { "start": "00:04:00", "end": "00:05:00", "label": "롯데백화점 -> 전포 방면", "processid": "13", "id" : "13-1"}
                                                     ] } } } ); fusioncharts.render(); }); 
-            </script>
-        <script type="text/javascript">
-            /* 범위 주석 */
-            //자바스크립트 코딩 영역
-            function func1(){
-                var r = confirm('신호 변경하시겠습니까??');//r은 변수
-                console.log(r);//변수 r에 저장된 값을 콘솔에 출력
-                if(r == true){
-                    alert("변경이 완료되었습니다..");
-                     
-                }
-                else{
-                    alert("변경을 취소하였습니다.");
-
-                }
-            }
-        </script>
-        <script language="javascript">
-            //상위 셀렉트로 하위 셀렉트 제어하기
-            function showSub(obj) {
-    
-                f = document.forms.select_machine;
-    
-                if (obj == 1) {
-    
-                    f.SUB1.style.display = "";
-                    f.SUB2.style.display = "none";
-                    f.SUB3.style.display = "none";
-                    f.SUB4.style.display = "none";
-                    f.SUB5.style.display = "";
-                    f.SUB6.style.display = "";
-    
-                } else if (obj == 3) {
-    
-                    f.SUB1.style.display = "none";
-                    f.SUB2.style.display = "";
-                    f.SUB3.style.display = "none";
-                    f.SUB4.style.display = "none";
-                    f.SUB5.style.display = "";
-                    f.SUB6.style.display = "";
-    
-                } else if (obj == 4) {
-    
-                    f.SUB1.style.display = "none";
-                    f.SUB2.style.display = "none";
-                    f.SUB3.style.display = "";
-                    f.SUB4.style.display = "none";
-                    f.SUB5.style.display = "";
-                    f.SUB6.style.display = "";
-    
-                } else if (obj == 7) {
-    
-                    f.SUB1.style.display = "none";
-                    f.SUB2.style.display = "none";
-                    f.SUB3.style.display = "none";
-                    f.SUB4.style.display = "";
-                    f.SUB5.style.display = "";
-                    f.SUB6.style.display = "";
-    
-                } else {
-    
-                    f.SUB1.style.display = "";
-                    f.SUB2.style.display = "none";
-                    f.SUB3.style.display = "none";
-                    f.SUB4.style.display = "none";
-                    f.SUB5.style.display = "";
-                    f.SUB6.style.display = "";
-    
-                }
-            }
-        </script>
-    </head>
-    <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">
-                <img src="./img/pol2.png" style="border-radius: 5px" width="150" height="50">
-                스마트교통관제시스템
-            </a>
-            <!-- Sidebar Toggle-->
-            <!-- <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button> -->
-            <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group" style = 'color:aliceblue'>
-                    <!-- <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button> -->
-                    포돌이님, 오늘도 화이팅하세요!
-                </div>
-            </form>
-            <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./img/podol.png" style="height: 30px; width: 30px; border-radius:20px;"></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading">목록</div>
-                            <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                교통정보
-                            </a>
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                실시간 교통상황
-                            </a>
-                            <a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                신호제어
-                            </a>
-                            <!-- <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Layouts
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
-                                </nav>
-                            </div> -->
-                            <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a> -->
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Authentication
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div>
-                                </nav>
-                            </div>
-                            <!-- <div class="sb-sidenav-menu-heading">Addons</div> -->
-                            <!-- 원래 차트랑 테이블 위치 -->
-                        </div>
-                    </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="iframe_wea"><iframe width="100%" height="245" src="https://forecast.io/embed/#lat=35.108&lon=129.04&name=부산&color=#E1E1E1&font=arial&units=si" frameborder="0"></iframe></div>
-                    </div>
-                </nav>
-            </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">실시간 교차로 신호 제어</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active", id="current_date">
-                                <script>
-                                    document.getElementById("current_date").innerHTML = Date();
-                                    </script>
-                            </li>
-                        </ol>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                신호제어
-                            </div>
-                            <form name="select_machine" style="text-align: center;">
-                                <br>
-                    
-                    
-                                <select name=" ">
-                                    <option value="행정구역">행정구역</option>
-                                    <option value="1">강서구</option>
-                                    <option value="2">금정구</option>
-                                    <option value="3">기장군</option>
-                                    <option value="4">남구</option>
-                                    <option value="5">동구</option>
-                                    <option value="6">동래구</option>
-                                    <option value="7" selected="selected">부산진구</option>
-                                    <option value="8">북구</option>
-                                    <option value="9">사상구</option>
-                                    <option value="10">사하구</option>
-                                    <option value="11">서구</option>
-                                    <option value="12">수영구</option>
-                                    <option value="13">연제구</option>
-                                    <option value="14">영도구</option>
-                                    <option value="15">중구</option>
-                                    <option value="16">해운대구</option>
-                                </select>
-                    
-                                <!-- <br> -->
-                    
-                                <!-- 교차로 선택 -->
-                                <!-- <select name="SUB1">
-                                    <option value="교차로명">교차로명</option>
-                                    <option value=" ">대동수문삼거리2</option>
-                                    <option value=" ">르노삼성남문</option>
-                                    <option value=" ">지사과학단지교차로</option>
-                                </select>
-                    
-                    
-                                <select name="SUB2">
-                                    <option value="교차로명">교차로명</option>
-                                    <option value=" ">교리삼거리</option>
-                                    <option value=" ">본다빈치스퀘어교차로</option>
-                                    <option value=" ">서암입구</option>
-                                    <option value=" ">송정1호교</option>
-                                    <option value=" ">연화육교교차로</option>
-                                    <option value=" ">올랜드아울렛</option>
-                                    <option value=" ">일광문화센터교차로</option>
-                                </select>
-                    
-                    
-                                <select name="SUB3">
-                                    <option value="교차로명">교차로명</option>
-                                    <option value=" ">대남교차로</option>
-                                    <option value=" ">대연사거리</option>
-                                    <option value=" ">동천삼거리</option>
-                                    <option value=" ">용호사거리</option>
-                                </select> -->
-                    
-                    
-                                <select name="SUB4">
-                                    <option value="교차로명">교차로명</option>
-                                    <option value=" ">범곡사거리</option>
-                                    <option value=" ">범내골</option>
-                                    <option value=" ">삼전교차로</option>
-                                    <option value=" " selected="selected">서면교차로</option>
-                                    <option value=" ">양정교차로</option>
-                                </select>
-                    
-                                <!-- 방면 선택 -->
-                                <select name="SUB5">
-                                    <option value=" ">방면선택</option>
-                                    <option value=" " selected="selected">진구청방면</option>
-                                    <option value=" ">범내골방면</option>
-                                    <option value=" ">연산방면</option>
-                                    <option value=" ">전포방면</option>
-                                    <option value=" ">롯데백화점방면</option>
-                                </select>
-                    
-                                <!-- 신호 주기 선택 -->
-                                <input type='number' name="SUB6" placeholder = "0초" min="1" max="180" value="20" style="border-radius: 5px;">
-                                <!-- <div> -->
-                                    <!-- <br> -->
-                    
-                                <button class="popup" onclick="func1()" style="text-align: center; width:128px; height:40px; border-radius:5px;">
-                                    <span class="popuptext" id="myPopup">신호 주기 변경</span>
-                                </button>
-                            <!-- </div> -->
-                            </form>
-
-                        </div>
-                        
-                        
-                    </div>
-                <body> 
-                    <div id="chart-container"></div> 
-                </body> 
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                                                        <div class="text-muted">Copyright &copy; KT_AIVLE DX컨설턴트 24조</div>
-
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-        <script src="js/progress.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
-        
-    </body>
+            </script> 
+    </head> 
+        <body> 
+            <div id="chart-container"></div> 
+        </body> 
 </html>
